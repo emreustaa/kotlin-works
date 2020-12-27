@@ -6,6 +6,9 @@ import android.os.Bundle
 import com.example.materialdesign.bottomnavigation.BottomNav
 import com.example.materialdesign.databinding.ActivityMainBinding
 import com.example.materialdesign.navigationdrawer.Nav_Drawer
+import com.example.materialdesign.sharedpreferences.LoginEkrani
+import com.example.materialdesign.sharedpreferences.SayacUygulamasi
+import com.example.materialdesign.sharedpreferences.SharedP
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, Nav_Drawer::class.java)
+            val intent = Intent(this@MainActivity, LoginEkrani::class.java)
             startActivity(intent)
         }
 

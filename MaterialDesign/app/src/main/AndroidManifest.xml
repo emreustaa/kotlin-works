@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.materialdesign">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,21 +15,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialDesign">
-        <activity android:name=".navigationdrawer.Nav_Drawer"></activity>
-        <activity android:name=".bottomnavigation.BottomNav" />
-        <activity android:name=".bottomnavigation.BottomNavigationView" />
-        <activity android:name=".tablayout.TabLayout" />
-        <activity android:name=".recyclerview.RecyclerViewClass" />
-        <activity android:name=".toolbar.ToolbarSearchIcon" />
-        <activity android:name=".toolbar.ToolbarKullanimi" />
-        <activity android:name=".floatinglabel.FloatingLabel" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".advancedkotlin.countdowntimer.CountDownTimerUygulamasi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".advancedkotlin.notifications.DurumaBagliBildirim"/>
+        <activity android:name=".advancedkotlin.broadcast.SmsYakalama" />
+
+        <receiver android:name=".advancedkotlin.broadcast.SarjSeviyeAlgilama" />
+        <receiver android:name=".advancedkotlin.broadcast.SmsYakalayici">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".advancedkotlin.broadcast.SarjSeviye" />
+
+        <service android:name=".advancedkotlin.services.TimerService" />
+
+        <activity android:name=".advancedkotlin.services.Services" />
+        <activity android:name=".storage.InternalExternalStorage" />
+        <activity android:name=".sharedpreferences.LoginAnaEkran" />
+        <activity android:name=".sharedpreferences.LoginEkrani" />
+        <activity android:name=".sharedpreferences.SayacUygulamasi" />
+        <activity android:name=".sharedpreferences.ActivityB" />
+        <activity android:name=".sharedpreferences.SharedP" />
+        <activity android:name=".navigationdrawer.Nav_Drawer" />
+        <activity android:name=".bottomnavigation.BottomNav" />
+        <activity android:name=".tablayout.TabLayout" />
+        <activity android:name=".recyclerview.RecyclerViewClass" />
+        <activity android:name=".toolbar.ToolbarSearchIcon" />
+        <activity android:name=".toolbar.ToolbarKullanimi" />
+        <activity android:name=".floatinglabel.FloatingLabel" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
