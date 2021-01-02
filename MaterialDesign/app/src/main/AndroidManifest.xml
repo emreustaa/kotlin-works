@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,15 +15,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialDesign">
-        <activity android:name=".advancedkotlin.countdowntimer.CountDownTimerUygulamasi">
+        android:theme="@style/Theme.MaterialDesign"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".jetpackandnavigation.NavigationUsing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".advancedkotlin.notifications.DurumaBagliBildirim"/>
+        <activity android:name=".coroutines.CoroutinesUsing">
+
+        </activity>
+        <activity android:name=".internettabanli.exampleapp.RandomFacts"></activity>
+        <activity android:name=".internettabanli.retrofit.RetrofitUygulamasi" />
+        <activity android:name=".internettabanli.volley.CRUDProcess" />
+        <activity android:name=".internettabanli.jsonparse.JSonParse" />
+        <activity android:name=".advancedkotlin.countdowntimer.CountDownTimerUygulamasi" />
+        <activity android:name=".advancedkotlin.notifications.DurumaBagliBildirim" />
         <activity android:name=".advancedkotlin.broadcast.SmsYakalama" />
 
         <receiver android:name=".advancedkotlin.broadcast.SarjSeviyeAlgilama" />
